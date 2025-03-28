@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  whimsymeasure:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    # Optional: For development with volume mounts
+    # volumes:
+    #  - ./client:/app/client
+    #  - ./server:/app/server
+    #  - ./shared:/app/shared
